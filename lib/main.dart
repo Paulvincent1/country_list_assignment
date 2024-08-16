@@ -95,9 +95,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[400],
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         title: Text(
           'Country List',
           style: TextStyle(
@@ -105,8 +103,6 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.deepPurple[400],
-        foregroundColor: Colors.white,
       ),
       body: ListView.builder(
         itemCount: countries.length,
@@ -138,7 +134,6 @@ class CountryItem extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        color: Colors.deepPurple,
         height: 200,
         child: Row(
           children: [
@@ -156,7 +151,6 @@ class CountryItem extends StatelessWidget {
                   },
                   placeholder: (context, url) {
                     return Container(
-                        color: Colors.deepPurple[400],
                         width: 2,
                         height: 2,
                         child: CircularProgressIndicator());
@@ -215,14 +209,13 @@ class Description extends StatelessWidget {
     return Text.rich(
       TextSpan(
         text: '$title: ',
-        style: TextStyle(color: Colors.white60, fontWeight: FontWeight.bold),
+        style: TextStyle(fontWeight: FontWeight.bold),
         children: [
           TextSpan(
-              text: '$content',
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              text: '$content', style: TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),
     );
   }
 }
+
